@@ -19,9 +19,9 @@ Click on Heroku Connect > Set Up Connection > Next > Authorize > Sign into your 
 Scroll down to the Mappings section. Here is where you can add mappings between your Rails Postgres db and your Salesforce backend. 
 
 Create Mapping: Contact 
-  Add attributes Account ID, Email, First name , Last name
-Create Mapping: Account
-  Add attributes Account Number, Billing City
+  - Add attributes Account ID, Email, First name , Last name  
+Create Mapping: Account  
+  - Add attributes Account Number, Billing City  
 
 To poll (sync) data:  
-  Click on the Contact or Account mapping and on the right side, click Poll Now.
+  - Click on the Contact or Account mapping and on the right side, click Poll Now.  
