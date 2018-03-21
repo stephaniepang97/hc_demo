@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @account.name %>
+</p>
+
+<p>
+  <strong>Accountnumber:</strong>
+  <%= @account.accountnumber %>
+</p>
+
+<p>
+  <strong>Billingcity:</strong>
+  <%= @account.billingcity %>
+</p>
+
+<p>
+  <strong>Sfid:</strong>
+  <%= @account.sfid %>
+</p>
+
+<p>
+  <strong>Isdeleted:</strong>
+  <%= @account.isdeleted %>
+</p>
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>
