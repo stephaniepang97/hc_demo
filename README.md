@@ -10,7 +10,7 @@ If you don't have any of the following, install or register for them first:
 ### Initial App
 First, I generated a new Rails app without any models, using a postgres db.
 ```
-rails new my_hc_demo --database=postgresql
+rails new hc_demo --database=postgresql
 ```
 You can double check that your app uses postgres by checking the `config/database.yml` file. I later used rails to generate scaffolds for Contact and Account, which is described in a later step. Only run these commands if you want to create your own Heroku Connect demo. Otherwise, just clone this repo and follow the next steps. 
 
