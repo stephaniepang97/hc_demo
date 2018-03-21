@@ -2,7 +2,11 @@
 This is a dummy Rails app using Postgres that demonstrates connecting to a Salesforce backend using Heroku Connect. I am using a free Salesforce Developer Edition account to do this.
 
 ### Initial App
-I generated a new Rails app without any models.
+I generated a new Rails app without any models, using a postgres db.
+```
+rails new my_hc_demo --database=postgresql
+```
+You can double check that your app uses postgres by checking the config/database.yml file. 
 
 ### Deploying to Heroku
 After cloning this repo, within the repo do: 
