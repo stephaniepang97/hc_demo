@@ -1,12 +1,18 @@
 # Heroku Connect Demo
 This is a dummy Rails app using Postgres that demonstrates connecting to a Salesforce backend using Heroku Connect. I am using a free Salesforce Developer Edition account to do this.
 
+### Set Up  
+If you don't have any of the following, install or register for them first: 
+- Register for a free [Heroku account](https://signup.heroku.com/login)
+- Download and install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+- Register for a free [Salesforce Developer Edition](https://developer.salesforce.com/signup)
+
 ### Initial App
 I generated a new Rails app without any models, using a postgres db.
 ```
 rails new my_hc_demo --database=postgresql
 ```
-You can double check that your app uses postgres by checking the config/database.yml file. 
+You can double check that your app uses postgres by checking the `config/database.yml` file. 
 
 ### Deploying to Heroku
 After cloning this repo, within the repo do: 
@@ -48,5 +54,13 @@ Mapped tables can be queried like any other table in your Postgres database. You
 ```
 SELECT * FROM salesforce.account;
 ```
+
+### Working with your Heroku Postgres database
+[This Heroku documentation page](https://devcenter.heroku.com/articles/getting-started-with-rails5) describes how to use Rails in Heroku. Relevant commands:
+- `heroku run rake db:migrate`
+- `heroku open` to visit app in browser
+- `heroku run rails console`
+- `heroku pg:psql` to access your database  
+To check that our Salesforce objects are in our database, we can run `heroku pg:psql` and do `select * from salesforce.account`. 
 
 
