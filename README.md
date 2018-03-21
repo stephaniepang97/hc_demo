@@ -8,7 +8,7 @@ If you don't have any of the following, install or register for them first:
 - Register for a free [Salesforce Developer Edition](https://developer.salesforce.com/signup)
 
 ### Initial App
-I generated a new Rails app without any models, using a postgres db.
+First, I generated a new Rails app without any models, using a postgres db.
 ```
 rails new my_hc_demo --database=postgresql
 ```
@@ -62,6 +62,56 @@ SELECT * FROM salesforce.account;
 - `heroku run rails console`
 - `heroku pg:psql` to access your database  
 
-To check that our Salesforce objects are in our database, we can run `heroku pg:psql` and do `select * from salesforce.account`. 
+To check that our Salesforce objects are in our database, we can run
+```
+heroku pg:psql
+rocky-brook-29385::DATABASE=> select * from salesforce.account;
+rocky-brook-29385::DATABASE=> select * from salesforce.contact;
+```
+To look at the schema of these tables, run
+```
+rocky-brook-29385::DATABASE=> \d salesforce.account
+                                           Table "salesforce.account"
+     Column     |            Type             |                            Modifiers                            
+----------------+-----------------------------+-----------------------------------------------------------------
+ createddate    | timestamp without time zone | 
+ isdeleted      | boolean                     | 
+ name           | character varying(255)      | 
+ systemmodstamp | timestamp without time zone | 
+ accountnumber  | character varying(40)       | 
+ billingcity    | character varying(40)       | 
+ sfid           | character varying(18)       | 
+ id             | integer                     | not null default nextval('salesforce.account_id_seq'::regclass)
+ _hc_lastop     | character varying(32)       | 
+ _hc_err        | text                        | 
+ ...
+rocky-brook-29385::DATABASE=> \d salesforce.contact
+                                           Table "salesforce.contact"
+     Column     |            Type             |                            Modifiers                            
+----------------+-----------------------------+-----------------------------------------------------------------
+ lastname       | character varying(80)       | 
+ accountid      | character varying(18)       | 
+ name           | character varying(121)      | 
+ isdeleted      | boolean                     | 
+ systemmodstamp | timestamp without time zone | 
+ createddate    | timestamp without time zone | 
+ firstname      | character varying(40)       | 
+ email          | character varying(80)       | 
+ sfid           | character varying(18)       | 
+ id             | integer                     | not null default nextval('salesforce.contact_id_seq'::regclass)
+ _hc_lastop     | character varying(32)       | 
+ _hc_err        | text                        | 
+...
+```
+
+To quit out of the shell, run `\q`. 
+
+
+### Generating Rails models
+Based on the schemas and the fields we want for each model, we can generate them like so:
+```
+rails generate model Account name:string accountnumber:string billingcity:string sfid:string isdeleted:boolean
+rails generate model Contact firstname:string lastname:string email:string accountid:string sfid:string isdeleted:boolean
+```
 
 
