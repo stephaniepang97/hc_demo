@@ -110,8 +110,10 @@ To quit out of the shell, run `\q`.
 ### Generating Rails models
 Based on the schemas and the fields we want for each model, we can generate them like so:
 ```
-rails generate model Account name:string accountnumber:string billingcity:string sfid:string isdeleted:boolean
-rails generate model Contact firstname:string lastname:string email:string accountid:string sfid:string isdeleted:boolean
+rails generate scaffold Account name:string accountnumber:string billingcity:string sfid:string isdeleted:boolean
+rails generate scaffold Contact firstname:string lastname:string email:string accountid:string sfid:string isdeleted:boolean
+rails db:setup
+rails db:migrate
 ```
 
 
