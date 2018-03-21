@@ -61,6 +61,7 @@ SELECT * FROM salesforce.account;
 - `heroku open` to visit app in browser
 - `heroku run rails console`
 - `heroku pg:psql` to access your database  
+
 To check that our Salesforce objects are in our database, we can run `heroku pg:psql` and do `select * from salesforce.account`. 
 
 
