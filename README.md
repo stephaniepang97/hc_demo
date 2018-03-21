@@ -107,13 +107,16 @@ rocky-brook-29385::DATABASE=> \d salesforce.contact
 To quit out of the shell, run `\q`. 
 
 
-### Generating Rails models
+### Generating Rails Scaffold
 Based on the schemas and the fields we want for each model, we can generate them like so:
 ```
 rails generate scaffold Account name:string accountnumber:string billingcity:string sfid:string isdeleted:boolean
 rails generate scaffold Contact firstname:string lastname:string email:string accountid:string sfid:string isdeleted:boolean
-rails db:setup
-rails db:migrate
+git add .
+git commit -m "Generated scaffolds"
+git push heroku master
+heroku run rails db:setup
+heroku run rails db:migrate
 ```
 
 
