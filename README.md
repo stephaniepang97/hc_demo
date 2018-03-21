@@ -30,7 +30,7 @@ To poll (sync) data:
 ### Translation between Salesforce and Heroku Postgres
 When you map objects, Heroku Connect will create or update the database tables used to store data for the mapped object. [This page from the Heroku Connect documentation site](https://devcenter.heroku.com/articles/heroku-connect-database-tables) is very helpful in describing exactly how Salesforce objects get translated to objects in the Postgres database. I've copied and pasted some of the most important ideas and sections from that site below:  
 
-**[Database table structure](https://devcenter.heroku.com/articles/heroku-connect-database-tables#database-table-structure)**  
+**[Database table structure](https://devcenter.heroku.com/articles/heroku-connect-database-tables#database-table-structure)**
 - Mapping tables use a lowercase version of the Salesforce object name, for example the `Account` Salesforce object is mapped to the `account` database table.
 - Column names use a lowercase version of the Salesforce field name, for example the `AccountNumber` Salesforce field is mapped to the `accountnumber` database column.
 - Creating a new mapping creates a new database table that Heroku Connect will automatically populate with data from Salesforce.
