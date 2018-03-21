@@ -30,7 +30,7 @@ To poll (sync) data:
 ### Translation between Salesforce and Heroku Postgres
 When you map objects, Heroku Connect will create or update the database tables used to store data for the mapped object. [This page from the Heroku Connect documentation site](https://devcenter.heroku.com/articles/heroku-connect-database-tables) is very helpful in describing exactly how Salesforce objects get translated to objects in the Postgres database. I've copied and pasted some of the most important ideas and sections from that site below:  
 
-**[Database table structure]**(https://devcenter.heroku.com/articles/heroku-connect-database-tables#database-table-structure)
+**[Database table structure](https://devcenter.heroku.com/articles/heroku-connect-database-tables#database-table-structure)**
 - Mapping tables use a lowercase version of the Salesforce object name, for example the `Account` Salesforce object is mapped to the `account` database table.
 - Column names use a lowercase version of the Salesforce field name, for example the `AccountNumber` Salesforce field is mapped to the `accountnumber` database column.
 - Creating a new mapping creates a new database table that Heroku Connect will automatically populate with data from Salesforce.
@@ -39,7 +39,7 @@ When you map objects, Heroku Connect will create or update the database tables u
 **Another note from Heroku:**
 You should avoid creating mapped tables yourself. Heroku Connect will not replace an existing table when creating a new mapping and therefore, if the table is not created correctly, you will experience errors when syncing data.  
 
-**[Querying mapped tables]**(https://devcenter.heroku.com/articles/heroku-connect-database-tables#querying-mapped-tables)
+**[Querying mapped tables](https://devcenter.heroku.com/articles/heroku-connect-database-tables#querying-mapped-tables)**
 Mapped tables can be queried like any other table in your Postgres database. You will need to qualify table names with the schema name you chose when provisioning the add-on, for example using the default salesforce schema name:
 ```
 SELECT * FROM salesforce.account;
