@@ -12,10 +12,10 @@ First, I generated a new Rails app without any models, using a postgres db.
 ```
 rails new my_hc_demo --database=postgresql
 ```
-You can double check that your app uses postgres by checking the `config/database.yml` file. 
+You can double check that your app uses postgres by checking the `config/database.yml` file. I later used rails to generate scaffolds for Contact and Account, which is described in a later step. Only run these commands if you want to create your own Heroku Connect demo. Otherwise, just clone this repo and follow the next steps. 
 
 ### Deploying to Heroku
-After cloning this repo, within the repo do: 
+After cloning this repo (or setting up your own new Rails app), within the repo do: 
 ```
 heroku create
 heroku addons:create herokuconnect:demo
@@ -118,5 +118,9 @@ git push heroku master
 heroku run rails db:setup
 heroku run rails db:migrate
 ```
+*Again, only run these commands to genearte scaffold if you started from your own Rails app, instead of cloning my repo.*
+
+### Launch
+Launch your app with `heroku open` and go to `/accounts` and `/contacts` to see the synced data. 
 
 
