@@ -1,4 +1,6 @@
 # Heroku Connect Demo
+**
+**See this demo deployed here: https://rocky-brook-29385.herokuapp.com/**  
 This is a dummy Rails app using Postgres that demonstrates connecting to a Salesforce backend using Heroku Connect. I am using a free Salesforce Developer Edition account to do this.
 
 ### Set Up  
